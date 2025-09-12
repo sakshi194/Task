@@ -5,6 +5,13 @@ app_description = "Task"
 app_email = "sakshipote194@gmail.com"
 app_license = "mit"
 
+
+fixtures = [
+    {
+        "dt": "Workflow",
+        "filters": [["name", "in", ["Recruitment flow"]]]
+    },
+]
 # Apps
 # ------------------
 
