@@ -11,7 +11,26 @@ fixtures = [
         "dt": "Workflow",
         "filters": [["name", "in", ["Recruitment flow"]]]
     },
+    {
+        "doctype": "Custom DocPerm",
+        "filters": [
+            ["parent", "=", "Job Applicant"]
+        ]
+    },
+    {
+        "doctype": "Client Script",
+        "filters": [
+            ["dt", "=", "Employee"]
+        ]
+    }
 ]
+
+doc_events = {
+    "Employee": {
+        "on_update": "task.custom_employee.on_update"
+    }
+}
+
 # Apps
 # ------------------
 
