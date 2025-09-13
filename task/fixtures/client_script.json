@@ -1,0 +1,13 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Employee",
+  "enabled": 1,
+  "modified": "2025-09-12 20:43:27.069421",
+  "module": null,
+  "name": "Update Status of Employee on the Basis of EMployee Type",
+  "script": "frappe.ui.form.on('Employee', {\r\n    employment_type(frm) {\r\n        if (['Joining', 'Probation', 'Confirmation'].includes(frm.doc.employment_type)) {\r\n            frm.set_value('status', 'Active');\r\n        } else if (frm.doc.employment_type === 'Exit') {\r\n            frm.set_value('status', 'Left');\r\n        }\r\n    },\r\n    refresh(frm) {\r\n        if (['Joining', 'Probation', 'Confirmation'].includes(frm.doc.employment_type)) {\r\n            frm.set_value('status', 'Active');\r\n        } else if (frm.doc.employment_type === 'Exit') {\r\n            frm.set_value('status', 'Left');\r\n        }\r\n    }\r\n});\r\n",
+  "view": "Form"
+ }
+]
