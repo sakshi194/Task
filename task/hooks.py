@@ -20,7 +20,19 @@ fixtures = [
     {
         "doctype": "Client Script",
         "filters": [
-            ["dt", "=", "Employee"]
+            ["dt", "=", "Salary Structure Assignment"]
+        ]
+    },
+    {
+        "doctype": "Print Format",
+        "filters": [
+            ["doc_type", "=", "Salary Slip"]
+        ]
+    },
+    {
+        "doctype": "Custom Field",
+        "filters": [
+            ["dt", "=", "Salary Slip"]
         ]
     }
 ]
