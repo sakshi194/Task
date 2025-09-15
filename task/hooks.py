@@ -32,7 +32,7 @@ fixtures = [
     {
         "doctype": "Custom Field",
         "filters": [
-            ["dt", "=", "Salary Slip"]
+            ["dt", "in", ["Salary Slip","Salary Structure Assignment"]]
         ]
     }
 ]
@@ -40,6 +40,9 @@ fixtures = [
 doc_events = {
     "Employee": {
         "on_update": "task.custom_employee.on_update"
+    },
+    "Salary Slip": {
+        "before_insert": "task.payroll_utils.assign_salary_structure"
     }
 }
 
